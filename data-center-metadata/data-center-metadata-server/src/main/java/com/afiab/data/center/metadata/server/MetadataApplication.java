@@ -1,4 +1,4 @@
-package com.afiab.data.center.metadata;
+package com.afiab.data.center.metadata.server;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
