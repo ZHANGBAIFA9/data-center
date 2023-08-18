@@ -3,19 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>data-center</artifactId>
+        <artifactId>data-center-metadata</artifactId>
         <groupId>com.afiab</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>data-center-metadata</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>data-center-metadata-dao</artifactId>
 
-    <modules>
-        <module>data-center-metadata-server</module>
-        <module>data-center-metadata-api</module>
-        <module>data-center-metadata-dao</module>
-    </modules>
 
 </project>
