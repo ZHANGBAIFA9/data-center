@@ -15,6 +15,6 @@ public class MetadataApplication {
     private static final Logger log = LoggerFactory.getLogger(MetadataApplication.class);
     public static void main(String[] args) {
         SpringApplication.run(MetadataApplication.class, args);
-        log.info("Bootstrap started successfully");
+        log.info("MetadataApplication started successfully");
     }
 }
