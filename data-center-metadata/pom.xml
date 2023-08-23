@@ -16,6 +16,7 @@
         <module>data-center-metadata-server</module>
         <module>data-center-metadata-api</module>
         <module>data-center-metadata-dao</module>
+        <module>data-center-metadata-lineage</module>
     </modules>
 
 </project>
