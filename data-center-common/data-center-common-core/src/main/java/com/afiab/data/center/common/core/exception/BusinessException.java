@@ -1,6 +1,6 @@
 package com.afiab.data.center.common.core.exception;
 
-import com.afiab.data.center.common.core.base.domain.BusinessCodeEnum;
+import com.afiab.data.center.common.core.enums.BusinessCodeEnum;
 
 /**
  * @Version 1.0

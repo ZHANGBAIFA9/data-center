@@ -1,4 +1,4 @@
-package com.afiab.data.center.common.core.base.domain;
+package com.afiab.data.center.common.core.enums;
 
 /**
  * @Version 1.0

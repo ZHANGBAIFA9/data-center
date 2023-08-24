@@ -1,6 +1,6 @@
 package com.afiab.data.center.common.core.base.controller;
 
-import com.afiab.data.center.common.core.base.domain.BusinessCodeEnum;
+import com.afiab.data.center.common.core.enums.BusinessCodeEnum;
 import com.afiab.data.center.common.core.base.domain.R;
 import com.afiab.data.center.common.core.base.page.PageRespDTO;
 import com.afiab.data.center.common.core.constant.Constants;

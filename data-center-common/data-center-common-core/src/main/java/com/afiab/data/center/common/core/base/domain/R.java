@@ -1,5 +1,6 @@
 package com.afiab.data.center.common.core.base.domain;
 
+import com.afiab.data.center.common.core.enums.BusinessCodeEnum;
 import lombok.Data;
 import org.springframework.util.CollectionUtils;
 import cn.hutool.core.util.StrUtil;
