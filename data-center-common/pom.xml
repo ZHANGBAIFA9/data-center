@@ -10,6 +10,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>data-center-common</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>data-center-common-swagger</module>
+        <module>data-center-common-core</module>
+        <module>data-center-common-zookeeper</module>
+        <module>data-center-common-redis</module>
+        <module>data-center-common-mq</module>
+        <module>data-center-common-es</module>
+    </modules>
 
 
 </project>
