@@ -26,6 +26,7 @@
         <module>data-center-olap</module>
         <module>data-center-scheduler</module>
         <module>data-center-metadata</module>
+        <module>data-center-common</module>
     </modules>
 
 
