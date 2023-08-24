@@ -1,16 +1,20 @@
 package com.afiab.data.center.common.core.base.controller;
 
 import com.afiab.data.center.common.core.base.domain.R;
+import com.afiab.data.center.common.core.utils.DateUtils;
+import com.afiab.data.center.common.core.utils.ServletUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-//import org.springframework.web.bind.WebDataBinder;
-//import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+import cn.hutool.core.util.StrUtil;
+import com.github.pagehelper.PageInfo;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.beans.PropertyEditorSupport;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @Version 1.0
@@ -24,38 +28,38 @@ public class BaseHandler {
     /**
      * 将前台传递过来的日期格式的字符串，自动转化为Date类型
      */
-//    @InitBinder
-//    public void initBinder(WebDataBinder binder) {
-//        // Date 类型转换
-//        binder.registerCustomEditor(Date.class, new PropertyEditorSupport() {
-//            @Override
-//            public void setAsText(String text) {
-//                setValue(DateUtils.parseDate(text));
-//            }
-//        });
-//    }
+    @InitBinder
+    public void initBinder(WebDataBinder binder) {
+        // Date 类型转换
+        binder.registerCustomEditor(Date.class, new PropertyEditorSupport() {
+            @Override
+            public void setAsText(String text) {
+                setValue(DateUtils.parseDate(text));
+            }
+        });
+    }
 
     /**
      * 获取request
      */
-//    public HttpServletRequest getRequest() {
-//        return ServletUtils.getRequest();
-//    }
+    public HttpServletRequest getRequest() {
+        return ServletUtils.getRequest();
+    }
 
     /**
      * 获取response
      */
-//    public HttpServletResponse getResponse() {
-//        return ServletUtils.getResponse();
-//    }
+    public HttpServletResponse getResponse() {
+        return ServletUtils.getResponse();
+    }
 
     /**
      * 获取session
      */
-//    public HttpSession getSession() {
-//        return getRequest().getSession();
-//    }
-//
+    public HttpSession getSession() {
+        return getRequest().getSession();
+    }
+
 //    public String getCurrentUserId() {
 //        String userCode = getRequest().getHeader(Constants.USER_CODE);
 //        if (StrUtil.isBlank(userCode)){
