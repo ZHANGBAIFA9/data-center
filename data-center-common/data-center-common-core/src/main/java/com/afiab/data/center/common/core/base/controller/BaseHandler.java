@@ -1,6 +1,10 @@
 package com.afiab.data.center.common.core.base.controller;
 
+import com.afiab.data.center.common.core.base.domain.BusinessCodeEnum;
 import com.afiab.data.center.common.core.base.domain.R;
+import com.afiab.data.center.common.core.base.page.PageRespDTO;
+import com.afiab.data.center.common.core.constant.Constants;
+import com.afiab.data.center.common.core.exception.BusinessException;
 import com.afiab.data.center.common.core.utils.DateUtils;
 import com.afiab.data.center.common.core.utils.ServletUtils;
 import org.slf4j.Logger;
@@ -60,53 +64,52 @@ public class BaseHandler {
         return getRequest().getSession();
     }
 
-//    public String getCurrentUserId() {
-//        String userCode = getRequest().getHeader(Constants.USER_CODE);
-//        if (StrUtil.isBlank(userCode)){
-//            throw new CustomException(BussCodeEnum.OP_ILLEGAL_PARAMETER,"userCode header参数异常");
-//        }
-//        return userCode;
-//    }
+    public String getCurrentUserId() {
+        String userCode = getRequest().getHeader(Constants.USER_CODE);
+        if (StrUtil.isBlank(userCode)){
+            throw new BusinessException(BusinessCodeEnum.ILLEGAL_PARAMETER,"userCode header参数异常");
+        }
+        return userCode;
+    }
 
 //    public UserInfoDTO getCurrentUser() {
 //        return RequestHolder.currentUser();
 //    }
-//
-//    public String getLoginName() {
-//        return getRequest().getHeader(Constants.USER_NAME);
-//    }
-//
+
 //    public String getCurrentOrgCode() {
 //        String orgCode = RequestHolder.getCurrentOrgCode();
 //        if (StrUtil.isBlank(orgCode)){
-//            throw new CustomException(BussCodeEnum.OP_ILLEGAL_PARAMETER,"orgCode header参数异常");
+//            throw new BusinessException(BussCodeEnum.ILLEGAL_PARAMETER,"orgCode header参数异常");
 //        }
 //        return orgCode;
-//
 //    }
 
-//    /**
-//     * 响应请求分页数据
-//     */
-//    @Deprecated
-//    @SuppressWarnings({"rawtypes", "unchecked"})
-//    protected <T> PageRespDTO dataTable(List<T> list) {
-//        PageRespDTO rspData = new PageRespDTO();
-//        rspData.setList(list);
-//        rspData.setPageSize(new PageInfo(list).getPageSize());
-//        rspData.setTotalCount((int) new PageInfo(list).getTotal());
-//        rspData.setTotalPage(new PageInfo(list).getPages());
-//        return rspData;
-//    }
-//
-//    @Deprecated
-//    @SuppressWarnings({"rawtypes", "unchecked"})
-//    protected R result(List<?> list) {
-//        PageInfo<?> pageInfo = new PageInfo<>(list);
-//        Map<String, Object> m = new HashMap<>(3);
-//        m.put("rows", list);
-//        m.put("pageNum", pageInfo.getPageNum());
-//        m.put("total", pageInfo.getTotal());
-//        return R.ok(m);
-//    }
+    public String getLoginName() {
+        return getRequest().getHeader(Constants.USER_NAME);
+    }
+
+    /**
+     * 响应请求分页数据
+     */
+    @Deprecated
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    protected <T> PageRespDTO dataTable(List<T> list) {
+        PageRespDTO rspData = new PageRespDTO();
+        rspData.setList(list);
+        rspData.setPageSize(new PageInfo(list).getPageSize());
+        rspData.setTotalCount((int) new PageInfo(list).getTotal());
+        rspData.setTotalPage(new PageInfo(list).getPages());
+        return rspData;
+    }
+
+    @Deprecated
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    protected R result(List<?> list) {
+        PageInfo<?> pageInfo = new PageInfo<>(list);
+        Map<String, Object> m = new HashMap<>(3);
+        m.put("rows", list);
+        m.put("pageNum", pageInfo.getPageNum());
+        m.put("total", pageInfo.getTotal());
+        return R.ok(m);
+    }
 }

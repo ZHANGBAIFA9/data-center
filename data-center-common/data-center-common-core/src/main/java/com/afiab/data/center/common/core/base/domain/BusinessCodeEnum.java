@@ -14,7 +14,6 @@ public enum BusinessCodeEnum {
     LOCKED("002", "处理中，请勿重复请求"),
     THREAD_POLL_FULL("003", "系统资源不足，请稍后"),
     ILLEGAL_PARAMETER("004", "请求参数非法"),
-
     /**
      * 系统异常编码
      */
