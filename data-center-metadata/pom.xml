@@ -19,4 +19,22 @@
         <module>data-center-metadata-lineage</module>
     </modules>
 
+    <properties>
+        <common.version>1.0-SNAPSHOT</common.version>
+    </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>com.afiab</groupId>
+                <artifactId>data-center-common-core</artifactId>
+                <version>${common.version}</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
 </project>

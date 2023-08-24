@@ -26,6 +26,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <!-- common 模块 -->
+        <dependency>
+            <groupId>com.afiab</groupId>
+            <artifactId>data-center-common-core</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
