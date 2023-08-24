@@ -7,8 +7,6 @@ import com.afiab.data.center.common.core.constant.Constants;
 import com.afiab.data.center.common.core.exception.BusinessException;
 import com.afiab.data.center.common.core.utils.DateUtils;
 import com.afiab.data.center.common.core.utils.ServletUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import cn.hutool.core.util.StrUtil;
@@ -27,7 +25,6 @@ import java.util.*;
  * @Description:  web层通用数据处理
  */
 public class BaseHandler {
-    protected final Logger logger = LoggerFactory.getLogger(BaseHandler.class);
 
     /**
      * 将前台传递过来的日期格式的字符串，自动转化为Date类型
