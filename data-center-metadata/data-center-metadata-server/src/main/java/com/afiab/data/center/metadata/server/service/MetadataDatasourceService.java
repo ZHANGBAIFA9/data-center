@@ -7,4 +7,6 @@ package com.afiab.data.center.metadata.server.service;
  * @Description:
  */
 public interface MetadataDatasourceService {
+
+
 }
