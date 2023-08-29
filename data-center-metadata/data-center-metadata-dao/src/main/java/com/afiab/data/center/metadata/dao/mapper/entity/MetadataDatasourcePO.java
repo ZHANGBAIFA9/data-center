@@ -17,6 +17,6 @@ import lombok.*;
 @Table(name = "metadata_datasource")
 @EqualsAndHashCode(callSuper = true)
 public class MetadataDatasourcePO extends DeleteAbleDao {
-    // fixme 表字段信息完善
-
+    /** 数据源名称 */
+    private String datasourceName ;
 }

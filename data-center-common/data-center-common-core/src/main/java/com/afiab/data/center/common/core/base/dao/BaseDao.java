@@ -20,19 +20,16 @@ public abstract class BaseDao implements Serializable {
     @Column(name = "id")
     @GeneratedValue(generator = "JDBC")
     private Long id;
-
     /**
      * 创建者
      */
     private String createdBy;
-
     /**
      * 创建时间
      */
     @Column(insertable = false, updatable = false)
     @JSONField(format="yyyy-MM-dd HH:mm:ss")
     private Date createdAt;
-
     /**
      * 更新者
      */
