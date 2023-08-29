@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.afiab.data.center.metadata.dao.mapper.metadata.MetadataDatasourceMapper">
+    <!-- 基本resultMap -->
+    <resultMap type="com.afiab.data.center.metadata.dao.mapper.entity.MetadataDatasourcePO" id="MetadataDatasourcePO">
+
+    </resultMap>
+
+</mapper>
