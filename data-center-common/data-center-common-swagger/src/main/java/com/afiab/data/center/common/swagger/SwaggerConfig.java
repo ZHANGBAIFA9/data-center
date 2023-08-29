@@ -35,52 +35,35 @@ import java.util.List;
 @EnableSwaggerBootstrapUI
 @Import(BeanValidatorPluginsConfiguration.class)
 public class SwaggerConfig {
-
-    /**
-     * 全局参数
-     *
-     * @return List<Parameter>
-     */
-    private List<Parameter> parameter() {
-        List<Parameter> params = new ArrayList<>();
-        params.add(new ParameterBuilder().name("token")
-                .description("认证令牌")
-                .modelRef(new ModelRef("string"))
-                .parameterType("header")
-                .required(false).build());
-        return params;
-    }
-
     @Bean(value = "userApi")
     @Order(value = 1)
     public Docket groupRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
+                //设置哪些接口暴露给swagger展示
                 .select()
+                //扫描所有有注解的api，用这种方式更灵活
                 .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+                //扫描指定包中的swagger注解
+                //.apis(RequestHandlerSelectors.basePackage("com.xx"))
+                .paths(PathSelectors.regex("(?!/ApiError.*).*"))
                 .paths(PathSelectors.any())
                 .build()
-                .securityContexts(Lists.newArrayList(securityContext()))
+//                .securityContexts(Lists.newArrayList(securityContext()))
                 //参数化token
-                .globalOperationParameters(parameter())
+//                .globalOperationParameters(parameter())
                 // 全局token
-                .securitySchemes(Lists.<SecurityScheme>newArrayList(apiKey()))
+//                .securitySchemes(Lists.<SecurityScheme>newArrayList(apiKey()))
                 ;
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("接口文档")
-                .description("springcloud")
+                .title("swagger 接口文档")
+                .description("描述")
                 .contact(new Contact("dev", "", ""))
-                .version("1.0.1").build();
-    }
-
-    private ApiKey apiKey() {
-        return new ApiKey(
-                "TOKEN",
-                "token",
-                "header");
+                .version("版本号：1.0")
+                .build();
     }
 
     private SecurityContext securityContext() {
@@ -97,4 +80,27 @@ public class SwaggerConfig {
         authorizationScopes[0] = authorizationScope;
         return Lists.newArrayList(new SecurityReference("BearerToken", authorizationScopes));
     }
+
+    /**
+     * 全局参数
+     *
+     * @return List<Parameter>
+     */
+    private List<Parameter> parameter() {
+        List<Parameter> params = new ArrayList<>();
+        params.add(new ParameterBuilder().name("token")
+                .description("认证令牌")
+                .modelRef(new ModelRef("string"))
+                .parameterType("header")
+                .required(false).build());
+        return params;
+    }
+
+    private ApiKey apiKey() {
+        return new ApiKey(
+                "TOKEN",
+                "token",
+                "header");
+    }
+
 }

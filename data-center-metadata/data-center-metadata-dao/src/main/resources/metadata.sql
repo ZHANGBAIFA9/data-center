@@ -25,3 +25,18 @@ CREATE TABLE `metadata_datasource`
     UNIQUE KEY `UIDX_URL_USER_PASS` (`jdbc_url`,`user_name`,`password`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COMMENT='数据源';
 
+CREATE TABLE `metadata_region`(
+    `id`              bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
+    `city`            varchar(20) NOT NULL COMMENT '集群所在城市',
+    `computer_room`   varchar(20) NOT NULL COMMENT '集群所在机房',
+    `cluster`         varchar(20) NOT NULL COMMENT '集群名称',
+    `version`         bigint(20) NOT NULL COMMENT '版本号',
+    `is_del`          tinyint(1) NOT NULL DEFAULT '0' COMMENT '0 未删除 默认，1已删除',
+    `created_at`      datetime(6) NOT NULL COMMENT '创建时间',
+    `created_by`      varchar(20) NOT NULL COMMENT '创建人工号',
+    `updated_at`      datetime(6) NOT NULL COMMENT '修改时间',
+    `updated_by`      varchar(20) NOT NULL COMMENT '修改人工号',
+    `last_updated_at` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP (6) ON UPDATE CURRENT_TIMESTAMP (6) COMMENT '最后修改时间',
+    PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COMMENT='集群地址信息';
+
