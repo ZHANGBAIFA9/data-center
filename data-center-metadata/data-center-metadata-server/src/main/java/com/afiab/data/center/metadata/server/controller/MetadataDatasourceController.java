@@ -4,6 +4,7 @@ import com.afiab.data.center.common.core.base.domain.R;
 import com.afiab.data.center.common.core.base.page.PageRespDTO;
 import com.afiab.data.center.metadata.api.constant.Swagger2Config;
 import com.afiab.data.center.metadata.server.service.MetadataDatasourceService;
+import com.afiab.data.center.metadata.server.service.convert.MetadataDatasourceConvert;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -26,9 +27,12 @@ import java.util.List;
 public class MetadataDatasourceController {
 
     private final MetadataDatasourceService datasourceService ;
+    private final MetadataDatasourceConvert datasourceConvert ;
 
-    public MetadataDatasourceController(MetadataDatasourceService datasourceService) {
-        this.datasourceService = datasourceService;
+    public MetadataDatasourceController(MetadataDatasourceService datasourceService,
+                                        MetadataDatasourceConvert datasourceConvert) {
+        this.datasourceService = datasourceService ;
+        this.datasourceConvert = datasourceConvert ;
     }
 
     @ApiOperation(value = "分页查询接口")
