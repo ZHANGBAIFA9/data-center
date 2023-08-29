@@ -71,6 +71,11 @@ public class Constants {
      */
     public static final String IS_ADMIN = "is_admin";
 
+    /**
+     * request header
+     */
+    public static final String AUTHORIZATION = "authStr";
+
     public static final String USER_NAME = "userName";
 
     public static final String USER_CODE = "userCode";
@@ -88,5 +93,8 @@ public class Constants {
     public static final String DATA_DOWNLOAD_SRC_ID = "download";
 
     public static final String DOWNLOAD_FILE = "download_limit";
+
+    // 访问头信息
+    public static final String TOKEN = "token";
 
 }

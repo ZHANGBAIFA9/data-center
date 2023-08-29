@@ -19,6 +19,7 @@ public enum BusinessCodeEnum {
      */
     REQ_INTERFACE_ERROR("500", "请求接口异常"),
     UNAUTHORIZED("401", "未授权"),
+    HEADER_INFO_NOT_FOUND("777", "头部信息缺失"),
     UNKNOWN_ERROR("999", "未知错误"),
 
 

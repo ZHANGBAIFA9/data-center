@@ -1,4 +1,4 @@
-package com.afiab.data.center.metadata.server.handler;
+package com.afiab.data.center.common.core.base.handler;
 
 
 import com.afiab.data.center.common.core.base.domain.R;

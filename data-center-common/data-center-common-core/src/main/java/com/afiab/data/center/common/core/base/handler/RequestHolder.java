@@ -1,4 +1,4 @@
-package com.afiab.data.center.metadata.server.handler;
+package com.afiab.data.center.common.core.base.handler;
 
 import cn.hutool.core.util.StrUtil;
 import com.afiab.data.center.common.core.constant.Constants;
