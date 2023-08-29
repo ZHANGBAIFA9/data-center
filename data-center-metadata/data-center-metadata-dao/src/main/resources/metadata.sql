@@ -1,4 +1,5 @@
-CREATE TABLE `metadata`.`metadata_datasource` (
+CREATE TABLE `metadata_datasource`
+(
     `id`                  bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
     `datasource_name`     varchar(128) NOT NULL COMMENT '数据源名称',
     `engine_type`         int(2) NOT NULL COMMENT '数据源类型(2:hive 1:MySQL 3:spark 4:presto 5:clickhouse )',
@@ -9,7 +10,7 @@ CREATE TABLE `metadata`.`metadata_datasource` (
     `datasource_desc`     varchar(256) DEFAULT NULL COMMENT '数据源描述',
     `account_type`        int(2) NOT NULL COMMENT '账户类型：0 普通账户 1 通用账户',
     `region_id`           bigint(20) DEFAULT NULL COMMENT '集群地址id',
-    `engine_version_id`   bigint(2) DEFAULT NULL COMMENT '引擎版本id',
+    `engine_version`      bigint(2) DEFAULT NULL COMMENT '引擎版本',
     `app_id`              bigint(2) DEFAULT NULL COMMENT '应用id',
     `collect_status`      int(2) NOT NULL COMMENT '采集状态(0 ：待采集 1：采集中 ，2；采集成功 3：采集失败)',
     `last_collect_time`   datetime(6) DEFAULT NULL COMMENT '最后一次采集开始时间',
@@ -20,6 +21,7 @@ CREATE TABLE `metadata`.`metadata_datasource` (
     `updated_at`          datetime(6) NOT NULL COMMENT '修改时间',
     `updated_by`          varchar(20)  NOT NULL COMMENT '修改人工号',
     `last_updated_at`     datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP (6) ON UPDATE CURRENT_TIMESTAMP (6) COMMENT '最后修改时间',
-    PRIMARY KEY (`id`),
+    PRIMARY KEY (`id`) USING BTREE,
     UNIQUE KEY `UIDX_URL_USER_PASS` (`jdbc_url`,`user_name`,`password`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COMMENT='数据源';
+
