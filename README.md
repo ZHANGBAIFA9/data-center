@@ -4,9 +4,29 @@
 
 ### 0.1、架构图
 
+![1693982167799](C:\Users\ZHANGBAIFA\AppData\Roaming\Typora\typora-user-images\1693982167799.png)
+
 
 
 ### 0.2、架构说明
+
+~~~mysql
+架构说明：
+1、限流（sentinel）熔断策略：流量激增进行熔断策略处理，防止后端服务因流量激增而被压垮
+2、路由转发（路由优先级:主机路由 –> 网络路由 –> 默认路由）
+3、网关(gateway):
+4、鉴权(权限中心):数据权限&功能权限
+5、服务集合：数据管理服务、元数据分析服务、OLAP、数据处理平台(实时&离线)、数据采集、数据质量、指标平台、标签平台、AB实验室、推荐平台、权限管理平台、审批平台、大数据任务诊断平台、智能运维平台
+6、注册中心:consul
+7、配置中心:apollo
+8、日志中心:elk（Elasticsearch , Logstash, Kibana）
+9、消息队列:rocketMQ
+10、健康检查:请求http接口，consul健康检查接口
+11、统一监控大盘:grafana（metrics采集jvm等信息）
+12、服务链路追踪：cat
+13、分布式缓存：redis、memcache
+14、存储：mysql、neo4j、es
+~~~
 
 
 
