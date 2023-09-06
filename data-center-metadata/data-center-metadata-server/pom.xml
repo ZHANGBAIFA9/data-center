@@ -8,17 +8,28 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
+    <packaging>jar</packaging>
     <artifactId>data-center-metadata-server</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <druid.version>1.2.6</druid.version>
+        <metadata.version>1.0.0-SNAPSHOT</metadata.version>
+        <log4j.version>2.17.0</log4j.version>
+        <lombok.version>1.18.22</lombok.version>
+        <org.mapstruct.version>1.5.3.Final</org.mapstruct.version>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.afiab</groupId>
             <artifactId>data-center-metadata-api</artifactId>
+            <version>${metadata.version}</version>
         </dependency>
         <dependency>
             <groupId>com.afiab</groupId>
             <artifactId>data-center-metadata-dao</artifactId>
+            <version>${metadata.version}</version>
         </dependency>
         <!-- 日志 -->
         <dependency>
@@ -29,6 +40,7 @@
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -57,10 +69,17 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
+            <version>${druid.version}</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <!-- mapstruct -->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${org.mapstruct.version}</version>
         </dependency>
     </dependencies>
 
@@ -129,7 +148,7 @@
                 <!-- 打包插件 -->
             </plugin>
             <!--打包排除本地的application.properties-->
-            <!--plugin>
+            <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <configuration>
