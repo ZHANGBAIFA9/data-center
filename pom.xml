@@ -36,6 +36,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <lombok.version>1.18.22</lombok.version>
+<!--        <build.ui.skip>false</build.ui.skip>-->
+<!--        <spotless.skip>false</spotless.skip>-->
     </properties>
 
     <dependencyManagement>
