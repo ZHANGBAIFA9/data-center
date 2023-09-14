@@ -4,8 +4,7 @@
 
 ### 0.1、架构图
 
-![1693982167799](C:\Users\ZHANGBAIFA\AppData\Roaming\Typora\typora-user-images\1693982167799.png)
-
+![架构图](images/架构图.png)
 
 
 ### 0.2、架构说明
