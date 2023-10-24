@@ -20,6 +20,41 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+<!--        <common.version>1.0-SNAPSHOT</common.version>-->
+<!--        <tkmybatis.version>2.1.5</tkmybatis.version>-->
+<!--        <mysql.version>8.0.18</mysql.version>-->
+<!--        <fastjson.version>1.2.83</fastjson.version>-->
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- 个性化包 -->
+<!--            <dependency>-->
+<!--                <groupId>com.afiab</groupId>-->
+<!--                <artifactId>data-center-common-core</artifactId>-->
+<!--                <version>${common.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>com.alibaba</groupId>-->
+<!--                <artifactId>fastjson</artifactId>-->
+<!--                <version>${fastjson.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>com.afiab</groupId>-->
+<!--                <artifactId>data-center-common-swagger</artifactId>-->
+<!--                <version>${common.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>tk.mybatis</groupId>-->
+<!--                <artifactId>mapper-spring-boot-starter</artifactId>-->
+<!--                <version>${tkmybatis.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>mysql</groupId>-->
+<!--                <artifactId>mysql-connector-java</artifactId>-->
+<!--                <version>${mysql.version}</version>-->
+<!--            </dependency>-->
+        </dependencies>
+    </dependencyManagement>
 
 </project>
